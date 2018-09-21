@@ -3,7 +3,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const passport = require('passport');
 const mongoose = require('mongoose');
-const { PORT, DATABASE_URL, CLIENT_ORIGIN } = require('./config');
+const { PORT, MONGODB_URI, CLIENT_ORIGIN } = require('./config');
 
 const localStrategy = require('./passport/localStrategy');
 const jwtStrategy = require('./passport/jwt');
@@ -77,7 +77,7 @@ app.use((err, req, res, next) => {
 if (require.main === module) {
   // Connect to DB and Listen for incoming connections
   mongoose
-    .connect(DATABASE_URL)
+    .connect(MONGODB_URI)
     .then(instance => {
       const conn = instance.connections[0];
       console.info(
