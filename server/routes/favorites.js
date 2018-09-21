@@ -150,12 +150,12 @@ router.put('/:id', (req, res, next) => {
     rating,
     userId
   };
-  console.log('id', idOfItemToRemove);
-  console.log('eps', episodes_watched);
-  console.log('chap', chapters_read);
-  console.log('stat', status);
-  console.log('rating', rating);
-  console.log('up', updateFavorite);
+  // console.log('id', idOfItemToRemove);
+  // console.log('eps', episodes_watched);
+  // console.log('chap', chapters_read);
+  // console.log('stat', status);
+  // console.log('rating', rating);
+  // console.log('up', updateFavorite);
 
   // /***** Never trust users - validate input *****/
   // if (!mongoose.Types.ObjectId.isValid(id)) {
@@ -174,7 +174,7 @@ router.put('/:id', (req, res, next) => {
     new: true
   })
     .then(result => {
-      console.log('result', result);
+      // console.log('result', result);
       if (result) {
         res.json({
           data: result
@@ -184,7 +184,7 @@ router.put('/:id', (req, res, next) => {
       }
     })
     .catch(err => {
-      console.log('err', err);
+      // console.log('err', err);
       next(err);
     });
 });
